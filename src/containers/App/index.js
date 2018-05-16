@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import logo from '../../images/logo.svg';
-import './App.css';
+import logo from '../../assets/images/logo.svg';
 
 class App extends Component {
+  componentDidMount() {
+    console.log('hehehe')
+  }
+  
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
