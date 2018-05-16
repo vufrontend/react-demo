@@ -9,9 +9,10 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header className="app-header">
+        <div className="logo-wrapper">
+          <image src={require(`assets/images/message-media-logo-2016.png`)} />
+        </div>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
