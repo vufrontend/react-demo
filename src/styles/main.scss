@@ -20,17 +20,11 @@
 
 // *** Modules
 @import 'modules/animations';
-@import 'modules/buttons';
 @import 'modules/icons';
-@import 'modules/transitions';
 
 // *** Components
-@import 'components/alert';
-@import 'components/footer';
-@import 'components/header';
-@import 'components/loader';
-@import 'components/logo';
-@import 'components/system-alerts';
 
+@import 'components/common/appHeader';
+@import 'components/common/spinner';
 @import 'components/listGif/listGif';
 @import 'components/listGif/gifCard';

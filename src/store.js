@@ -5,17 +5,16 @@ import rootEpic from './epics';
 import rootReducer from './reducers';
 
 const initialState = Immutable.Map();
-// console.log(rootEpic)
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
 const middleware = [
     epicMiddleware
 ];
 
-// if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
     const { createLogger } = require('redux-logger');
     middleware.push(createLogger({ collapsed: true }));
-// }
+}
 
 const store = createStore(
     rootReducer,

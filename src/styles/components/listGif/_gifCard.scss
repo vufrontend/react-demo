@@ -19,6 +19,7 @@
             background-position: center; 
             background-color: $card-block-bg;
             height: calc(50vw - 50px);
+            cursor: pointer;
         @include md {
             height: calc(33vw - 50px);
         }
@@ -31,6 +32,7 @@
             .info-group {
                 flex: 1;
                 margin: 0;
+                padding: 0;
                 margin-left: auto;
                 list-style: none;
                 display: flex;
@@ -39,20 +41,24 @@
                 justify-content: flex-end;
                 color: $app-color;
                 li {
-                    padding-left: 15px;
+                    max-width: 33%;
+                    margin-left: 10px;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    white-space: nowrap;
                     overflow: hidden;
-                    text-overflow: ellipsis;
-                    @include md-only {
-                        max-width: 80px;
+                    span {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        @include md-only {
+                            max-width: 120px;
+                        }
                     }
-                }
-                i {
-                    color: $app-color;
-                    margin-right: 10px;
+                    i {
+                        color: $app-color;
+                        margin-right: 5px;
+                    }
                 }
             }
         }
@@ -62,6 +68,12 @@
         flex-direction: row;
         align-content: flex-start;
         padding: 10px 0;
+        overflow: hidden;
+        &.emty {
+            padding-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
         .user-icon {
             width: 20px;
             height: 20px;
@@ -70,11 +82,12 @@
             display: block;
             background-color: $app-color;
             overflow: hidden;
+            img {
+                vertical-align: 0;
+            }
         }
         .user-name {
             color: #3c8fc2;
-            font-size: 14px;
-            font-weight: bold;
         }
     }
 }

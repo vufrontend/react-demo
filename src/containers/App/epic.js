@@ -1,4 +1,3 @@
-import {Observable} from 'rxjs/Observable';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { END_POINT } from '../../api/'
 import { FETCH_TRENDINGS } from './constants';
@@ -12,12 +11,10 @@ export function fetchTrendingsEpic(action$) {
         ajax(END_POINT.getTrendingGifs.url(), END_POINT.getTrendingGifs.method)
         .retry(3)
         .map(({response}) => {
-            // console.log(response);
             return fetchTrendingsSuccess(response.data);
         })
         .catch(error => {
-            // console.log(error);
-            return Observable.of(fetchTrendingsFail('Sorry, something went wrong. Please try again later.'));
+            return fetchTrendingsFail('Sorry, something went wrong. Please try again later.');
         })
     );
 }
