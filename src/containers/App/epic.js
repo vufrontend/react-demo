@@ -11,10 +11,12 @@ export function fetchTrendingsEpic(action$) {
     .switchMap(() =>
         ajax(END_POINT.getTrendingGifs.url(), END_POINT.getTrendingGifs.method)
         .retry(3)
-        .map(res => {
-            return Observable.of(fetchTrendingsSuccess(res.data));
+        .map(({response}) => {
+            // console.log(response);
+            return fetchTrendingsSuccess(response.data);
         })
         .catch(error => {
+            // console.log(error);
             return Observable.of(fetchTrendingsFail('Sorry, something went wrong. Please try again later.'));
         })
     );

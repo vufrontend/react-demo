@@ -11,6 +11,6 @@ export const  {
   fetchTrendingsFail
 } = createActions({
     [FETCH_TRENDINGS]: () => ({}),
-    [FETCH_TRENDINGS_SUCCESS]: (gifs) => ({gifs}),
+    [FETCH_TRENDINGS_SUCCESS]: (data) => ({data}),
     [FETCH_TRENDINGS_FAIL]:(error) => ({error})
   });

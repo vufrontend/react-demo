@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from '../../assets/images/logo.svg';
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types';
+// import logo from '../../assets/images/logo.svg';
+import AppHeader from '../../components/common/appHeader';
+import ListGif from '../../components/listGif/ListGif';
+import { fetchTrendings } from './actions';
 
+const propTypes = {
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.array.isRequired
+}
 class App extends Component {
   componentDidMount() {
-    console.log('hehehe')
+    this.props.fetchTrendings();
   }
   
   render() {
+    const {data, loading} = this.props;
     return (
       <div className="app">
-        <header className="app-header">
-        <div className="logo-wrapper">
-          <image src={require(`assets/images/message-media-logo-2016.png`)} />
-        </div>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <AppHeader/>
+        <ListGif data={data} loading={loading}/>
       </div>
     );
   }
 }
+const mapStateToProps= state => ({
+  data: state.get('AppReducer').get('data').toJS(),
+  loading: state.get('AppReducer').get('loading')
+});
 
-export default App;
+App.propTypes = propTypes;
+
+export default connect(mapStateToProps,{fetchTrendings})(App);

@@ -1,0 +1,15 @@
+.gif-block-wrapper {
+    display: block;
+    padding: 10px 15px;
+    .gif-block {
+        background-color: white;
+        padding: 10px;
+        .image-block {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+        }
+    }
+}
+

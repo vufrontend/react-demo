@@ -5,6 +5,7 @@
   opacity: 1 !important;
   position: relative;
   transition: opacity 0.5s;
+  background-color: $main-color;
 
   // &__main {
   //   min-height: calc(100vh - #{$footer-height});
