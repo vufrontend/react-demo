@@ -42,7 +42,7 @@
                 color: $app-color;
                 li {
                     max-width: 33%;
-                    margin-left: 10px;
+                    margin-left: 15px;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -58,6 +58,12 @@
                     i {
                         color: $app-color;
                         margin-right: 5px;
+                    }
+                    @include md-only {
+                        display: none;
+                        &:first-child{
+                            display: flex;
+                        }
                     }
                 }
             }
