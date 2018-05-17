@@ -1,14 +1,80 @@
 .gif-block-wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 10px 15px;
     .gif-block {
         background-color: white;
+        border-radius: 0.5rem;
+        -webkit-box-shadow: -1px 1px 5px 0px rgba(50, 50, 50, 0.3);
+        -moz-box-shadow:    -1px 1px 5px 0px rgba(50, 50, 50, 0.3);
+        box-shadow:         -1px 1px 5px 0px rgba(50, 50, 50, 0.3);
         padding: 10px;
         .image-block {
             display: flex;
             justify-content: center;
             flex-direction: column;
-            
+            overflow: hidden;
+            background-image:url('../assets/images/gif_blank.png');
+            background-repeat: no-repeat;
+            background-position: center; 
+            background-color: $card-block-bg;
+            height: calc(50vw - 50px);
+        @include md {
+            height: calc(33vw - 50px);
+        }
+        @include lg {
+            height: calc(25vw - 50px);
+        }
+        }
+        .info-group-wrapper {
+            padding-top: 15px;
+            .info-group {
+                flex: 1;
+                margin: 0;
+                margin-left: auto;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                justify-content: flex-end;
+                color: $app-color;
+                li {
+                    padding-left: 15px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include md-only {
+                        max-width: 80px;
+                    }
+                }
+                i {
+                    color: $app-color;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .user-info-block {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        padding: 10px 0;
+        .user-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            border-radius: 50%;
+            display: block;
+            background-color: $app-color;
+            overflow: hidden;
+        }
+        .user-name {
+            color: #3c8fc2;
+            font-size: 14px;
+            font-weight: bold;
         }
     }
 }
