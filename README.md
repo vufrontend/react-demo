@@ -1,7 +1,7 @@
 Vu Luu Demo
 ============================
 
-An application call GiPhy trending endpoint and show 20 up-to-date trending gifs. When user click on an image, this application will show it full screen. 
+An application calls GiPhy trending endpoint and shows 20 up-to-date trending gifs. When user clicks on an image, this application will show the image full screen. 
 
 ### Prerequisites
 
@@ -27,8 +27,8 @@ Simply run the following command to start the application:
     yarn start
 
 You will see the following message once successfully started:
-    >Compiled successfully!
+    > Compiled successfully!
 
 Open your brownser and access: http://localhost:3000/
 
-enjoy!
+Enjoy!
